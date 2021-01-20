@@ -1,0 +1,131 @@
+// mixins and functions area
+
+
+// === Screen
+
+// responsive
+@mixin responsive($range)
+{
+  @if $range == tablet { @media (min-width: 768px) { @content; } }
+  @if $range == desktop { @media (min-width: 1024px) { @content; } }
+  @else if $range == desktop-1280 { @media (min-width: 1280px) { @content; } }
+  @else if $range == desktop-1440 { @media (min-width: 1440px) { @content; } }
+  @else if $range == desktop-1920 { @media (min-width: 1920px) { @content; } }
+}
+
+// for retina
+@mixin retina()
+{
+  @media (-webkit-min-device-pixel-ratio: 2) { @content; }
+}
+
+
+// === Color
+
+// gradient
+@mixin color-linear-gradient($matt-color, $start, $end, $direction:'vertical')
+{
+  background: $matt-color;
+  @if $direction == 'horizontal'
+  {
+    background: linear-gradient(to right, $start, $end);
+  }
+  @else
+  {
+    background: linear-gradient(to bottom, $start, $end);
+  }
+}
+
+
+// === Image
+
+
+// === Text
+
+// single line text
+@mixin text-single-line()
+{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// multi line text
+@mixin text-multi-line($height: 1rem, $row: 3)
+{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: $height;
+  max-height: $height * $row;
+  display: -webkit-box;
+  -webkit-line-clamp: $row;
+  -webkit-box-orient: vertical;
+}
+
+
+// === Button
+
+// button touch options
+@mixin button-touch-options($opacity:false)
+{
+  outline: none;
+  user-select: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  @if ($opacity)
+  {
+    &:active {
+      opacity: .6;
+    }
+  }
+}
+
+
+// === Etc
+
+// horizontal scroll for mobile
+@mixin horizontal-scroll-wrap($padding-side:16px, $padding-bottom:16px)
+{
+  display: block;
+  padding-bottom: $padding-bottom;
+  margin: 0;
+  white-space: nowrap;
+  font-size: 0;
+  line-height: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  -webkit-scroll-snap-type: x mandatory;
+  scroll-snap-type: x mandatory;
+  -webkit-scroll-padding-left: $padding-side;
+  scroll-padding-left: $padding-side;
+}
+@mixin horizontal-scroll-item($padding-side:16px, $padding-side-outer:null)
+{
+  @if $padding-side-outer == null { $padding-side-outer: $padding-side; }
+  position: relative;
+  display: inline-block;
+  margin-left: $padding-side;
+  padding: 0;
+  -webkit-scroll-snap-align: start;
+  scroll-snap-align: start;
+  vertical-align: top;
+  white-space: normal;
+  line-height: normal;
+  font-size: initial;
+  &:first-child {
+    margin-left: $padding-side-outer;
+  }
+  &:last-child {
+    margin-right: $padding-side-outer;
+  }
+}
+
+// background blur
+@mixin background-blur($size)
+{
+  @supports (backdrop-filter: blur($size)) {
+    backdrop-filter: blur($size);
+    @content;
+  }
+}
