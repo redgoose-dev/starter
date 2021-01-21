@@ -1,5 +1,4 @@
 const path = require('path');
-// set .env
 require('dotenv').config();
 
 // export
@@ -29,5 +28,6 @@ module.exports = {
     '@snowpack/plugin-sass',
     '@snowpack/plugin-optimize',
     '@snowpack/plugin-dotenv',
+    '@snowpack/plugin-typescript',
   ],
 };

@@ -1,14 +1,13 @@
-const prod = process.env.NODE_ENV === 'production';
-
 module.exports = {
   preprocess: require('svelte-preprocess')({
     defaults: {
+      script: 'javascript',
       style: 'scss',
     },
     scss: {
       prependData: [
-        `@import './src/scss/variables.scss';`,
-        `@import './src/scss/mixins.scss';`
+        `@import './src/assets/scss/variables.scss';`,
+        `@import './src/assets/scss/mixins.scss';`
       ].join('\n'),
     },
     postcss: {

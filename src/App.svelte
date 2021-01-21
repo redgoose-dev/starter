@@ -1,19 +1,23 @@
-<script>
+<script lang="ts">
 import HelloWorld from '~/components/HelloWorld.svelte';
-// code here
 </script>
 
 <style lang="scss">
-// code here
+main {
+  padding: 2rem;
+  > *:first-child {
+    margin-top: 0;
+  }
+}
 </style>
 
 <main>
-  <h1>Hello world</h1>
+  <h1>Starter ground / Svelte</h1>
+  <p>Hello Svelte project</p>
   <ul>
     <li>apple</li>
     <li>banana</li>
     <li>mango</li>
   </ul>
-  <hr>
   <HelloWorld/>
 </main>

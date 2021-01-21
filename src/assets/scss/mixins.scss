@@ -1,4 +1,5 @@
 // mixins and functions area
+@import "./variables";
 
 
 // === Screen
@@ -6,17 +7,33 @@
 // responsive
 @mixin responsive($range)
 {
-  @if $range == tablet { @media (min-width: 768px) { @content; } }
-  @if $range == desktop { @media (min-width: 1024px) { @content; } }
-  @else if $range == desktop-1280 { @media (min-width: 1280px) { @content; } }
-  @else if $range == desktop-1440 { @media (min-width: 1440px) { @content; } }
-  @else if $range == desktop-1920 { @media (min-width: 1920px) { @content; } }
+  @if ($range == tablet) { @media (min-width: $size-tablet) { @content; } }
+  @if ($range == desktop) { @media (min-width: $size-desktop) { @content; } }
+  @else if ($range == desktop-1280) { @media (min-width: $size-desktop-1280) { @content; } }
+  @else if ($range == desktop-1440) { @media (min-width: $size-desktop-1440) { @content; } }
+  @else if ($range == desktop-1920) { @media (min-width: $size-desktop-1920) { @content; } }
 }
 
 // for retina
 @mixin retina()
 {
   @media (-webkit-min-device-pixel-ratio: 2) { @content; }
+}
+
+// dark mode
+@mixin dark-mode($root: false)
+{
+  $name: $text-dark-mode-name;
+  @if ($root)
+  {
+    &[#{$name}=dark] { @content; }
+    &[#{$name}=system] { @media (prefers-color-scheme: dark) { @content; } }
+  }
+  @else
+  {
+    html[#{$name}=dark] & { @content; }
+    @media (prefers-color-scheme: dark) { html[#{$name}=system] & { @content; } }
+  }
 }
 
 
@@ -26,7 +43,7 @@
 @mixin color-linear-gradient($matt-color, $start, $end, $direction:'vertical')
 {
   background: $matt-color;
-  @if $direction == 'horizontal'
+  @if ($direction == 'horizontal')
   {
     background: linear-gradient(to right, $start, $end);
   }
@@ -102,7 +119,7 @@
 }
 @mixin horizontal-scroll-item($padding-side:16px, $padding-side-outer:null)
 {
-  @if $padding-side-outer == null { $padding-side-outer: $padding-side; }
+  @if ($padding-side-outer == null) { $padding-side-outer: $padding-side; }
   position: relative;
   display: inline-block;
   margin-left: $padding-side;

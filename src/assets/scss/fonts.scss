@@ -1,0 +1,15 @@
+// font loader
+@mixin font-loader-foo($weight-name, $weight)
+{
+  $name: 'Foo';
+  $path: '/dist/assets/fonts/foo-#{$weight-name}';
+  @font-face {
+    font-family: $name;
+    font-style: normal;
+    font-weight: $weight;
+    src: local($name), url('#{$path}.woff') format('woff');
+  }
+}
+
+@include font-loader-foo('regular', 400);
+@include font-loader-foo('bold', 600);
