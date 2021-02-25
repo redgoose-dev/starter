@@ -1,0 +1,52 @@
+@import "./variables";
+@import "./mixins";
+@import "./normalize";
+//@import "./fonts";
+
+// root
+:root {
+  // color
+  --color-text: #000;
+  --color-background: #fff;
+  --color-reverse: #fff;
+  --color-link: #20b675;
+  // size
+  --size-screen-mobile: 320px;
+  --size-screen-tablet: 768px;
+  --size-screen-desktop: 1024px;
+  --size-screen-desktop-wide: 1440px;
+  --size-screen-fhd: 1920px;
+  // font
+  --font-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --font-console: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+
+  @include dark-mode(true) {
+    --color-text: #fff;
+    --color-background: #000;
+    --color-reverse: #000;
+  }
+}
+
+// elements
+html {
+  touch-action: manipulation;
+}
+body {
+  min-width: var(--size-screen-mobile);
+  margin: 0;
+  background-color: var(--color-background);
+  font-size: 16px;
+  line-height: 1.6;
+}
+body, button, input, textarea, select {
+  font-family: var(--font-base);
+  color: var(--color-text);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: none;
+}
+a {
+  color: var(--color-link);
+}
+main {
+  padding: 24px;
+}
