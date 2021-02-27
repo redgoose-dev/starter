@@ -1,6 +1,9 @@
 # starter / svelte
 
-`snowpack x svelte x scss`
+- snowpack
+- svelte
+- scss
+
 
 ## setup
 
