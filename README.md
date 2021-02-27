@@ -1,27 +1,23 @@
 # starter / react
 
-`snowpack x react x scss`
+- snowpack
+- react
+- scss
+- recoil
+- typescript
+
 
 ## setup
 
-```shell
-# development
-yarn run dev
+[degit](https://github.com/Rich-Harris/degit) 을 이용하여 다음 커멘드를 실행하여 프로젝트를 복사합니다.
 
-# production
-yarn run build
+```shell
+degit https://github.com/redgoose-dev/starter#react {DIR_NAME}
 ```
+
+복제된 프로젝트에서 입맛에 맞게 환경을 만듭니다.
 
 ### autoprefixer
 
 `autoprefixer`를 사용할 준비가 되어 있습니다.  
 기본적으로 꺼져 있지만 만약 사용하려면 `postcss.config.js`에서 관련 주석을 해제 해주세요.
-
-
-## todo
-
-- [x] `/libs` 영역 만들기
-- [x]  타입스크립트 테스트 및 `libs`에서 몇가지 함수 넣기
-- [ ] `recoil` 추가 및 사용방법 테스트
-- [ ] `react-router` 추가할지 고민하기
-- [x] scss mixins 추가
