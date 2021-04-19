@@ -1,5 +1,16 @@
-/.idea
+# directories
 /node_modules
+/build
+/assets
+/.idea
+.vscode
 
+# files
 yarn.lock
 .DS_Store
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
