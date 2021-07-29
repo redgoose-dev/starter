@@ -1,0 +1,25 @@
+{
+  "name": "starter-javascript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/redgoose-dev/starter.git",
+  "author": "redgoose <scripter@me.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "snowpack dev",
+    "build": "snowpack build",
+    "start": "http-server ./build"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "devDependencies": {
+    "@snowpack/plugin-dotenv": "^2.1.0",
+    "@snowpack/plugin-optimize": "^0.2.13",
+    "@snowpack/plugin-sass": "^1.4.0",
+    "dotenv": "^10.0.0",
+    "http-server": "^0.12.3",
+    "snowpack": "^3.8.3"
+  }
+}
