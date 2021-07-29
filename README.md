@@ -2,6 +2,7 @@
 
 - snowpack
 - scss
+- dotenv
 
 
 ## setup

@@ -18,14 +18,17 @@ module.exports = {
     baseUrl: './',
     clean: true,
     metaUrlPath: '_snowpack',
-    sourceMap: true,
+  },
+  optimize: {
+    bundle: true,
+    minify: true,
+    target: 'es2020',
   },
   alias: {
     '~': path.resolve(__dirname, './src'),
   },
   plugins: [
     '@snowpack/plugin-sass',
-    '@snowpack/plugin-optimize',
     '@snowpack/plugin-dotenv',
   ],
 }

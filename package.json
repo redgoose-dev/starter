@@ -7,6 +7,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "snowpack dev",
+    "prebuild": "rm -rf ./build",
     "build": "snowpack build",
     "start": "http-server ./build"
   },
@@ -16,7 +17,6 @@
   ],
   "devDependencies": {
     "@snowpack/plugin-dotenv": "^2.1.0",
-    "@snowpack/plugin-optimize": "^0.2.13",
     "@snowpack/plugin-sass": "^1.4.0",
     "dotenv": "^10.0.0",
     "http-server": "^0.12.3",
