@@ -1,5 +1,10 @@
+# directories
 /.idea
 /node_modules
+/dist
+/dist-ssr
 
-yarn.lock
+# files
 .DS_Store
+yarn.lock
+*.local

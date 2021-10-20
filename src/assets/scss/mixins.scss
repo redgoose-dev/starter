@@ -1,0 +1,67 @@
+// mixins and functions area
+@use './variables';
+
+
+// === Screen
+
+// responsive
+@mixin responsive($range)
+{
+  @if ($range == tablet) { @media (min-width: variables.$size-tablet) { @content; } }
+  @if ($range == desktop) { @media (min-width: variables.$size-desktop) { @content; } }
+  @else if ($range == desktop-1280) { @media (min-width: variables.$size-desktop-1280) { @content; } }
+  @else if ($range == desktop-1440) { @media (min-width: variables.$size-desktop-1440) { @content; } }
+  @else if ($range == desktop-1920) { @media (min-width: variables.$size-desktop-1920) { @content; } }
+}
+
+// for retina
+@mixin retina()
+{
+  @media (-webkit-min-device-pixel-ratio: 2) { @content; }
+}
+
+// dark mode
+@mixin dark-mode($root: false)
+{
+  $name: variables.$text-dark-mode-name;
+  @if ($root)
+  {
+    &[#{$name}=dark] { @content; }
+    &[#{$name}=system] { @media (prefers-color-scheme: dark) { @content; } }
+  }
+  @else
+  {
+    html[#{$name}=dark] & { @content; }
+    @media (prefers-color-scheme: dark) { html[#{$name}=system] & { @content; } }
+  }
+}
+
+
+// === Button
+
+// button touch options
+@mixin button-touch-options($opacity:false)
+{
+  outline: none;
+  user-select: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  @if ($opacity)
+  {
+    &:active {
+      opacity: .6;
+    }
+  }
+}
+
+
+// === Etc
+
+// background blur
+@mixin background-blur($size)
+{
+  @supports (backdrop-filter: blur($size)) {
+    backdrop-filter: blur($size);
+    @content;
+  }
+}

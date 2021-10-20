@@ -1,0 +1,21 @@
+{
+  "name": "starter-javascript-vite",
+  "version": "0.0.0",
+  "repository": "https://github.com/redgoose-dev/starter.git",
+  "author": "redgoose <scripter@me.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "prebuild": "rm -rf ./dist",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "devDependencies": {
+    "sass": "^1.43.2",
+    "vite": "^2.6.4"
+  }
+}
