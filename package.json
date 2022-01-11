@@ -8,7 +8,7 @@
     "dev": "vite",
     "prebuild": "rm -rf ./dist",
     "build": "vite build",
-    "serve": "vite preview"
+    "start": "vite preview"
   },
   "browserslist": [
     "> 1%",
