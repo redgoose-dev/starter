@@ -1,4 +1,4 @@
-# starter / javascript-vue3
+# starter / vite-vue3
 
 - Vite
 - DotENV
