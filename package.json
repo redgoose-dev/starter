@@ -1,6 +1,7 @@
 {
-  "name": "starter-vite-vue3",
+  "name": "starter-vite-svelte",
   "version": "0.0.0",
+  "type": "module",
   "repository": "https://github.com/redgoose-dev/starter.git",
   "author": "redgoose <scripter@me.com>",
   "license": "MIT",
@@ -13,13 +14,13 @@
     "> 1%",
     "last 2 versions"
   ],
-  "dependencies": {
-    "vue": "^3.2.26",
-    "vuex": "^4.0.2"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@vitejs/plugin-vue": "^2.0.1",
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.34",
+    "autoprefixer": "^10.4.2",
     "sass": "^1.48.0",
+    "svelte": "^3.46.2",
+    "svelte-preprocess": "^4.10.2",
     "vite": "^2.7.12"
   }
 }

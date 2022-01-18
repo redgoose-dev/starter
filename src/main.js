@@ -1,6 +1,4 @@
-import { createApp } from 'vue';
-import App from './app.vue';
-
+import App from './app.svelte'
 // set stylesheet
 import './assets/scss/main.scss';
 
@@ -9,4 +7,8 @@ import './assets/scss/main.scss';
 // set debug
 window.DEBUG = !!DEBUG;
 
-createApp(App).mount('#app');
+const app = new App({
+  target: document.getElementById('app')
+})
+
+export default app;
