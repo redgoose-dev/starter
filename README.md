@@ -1,4 +1,4 @@
-# starter / vite-javascript
+# starter / vite-node
 
 - Vite
 - SCSS
