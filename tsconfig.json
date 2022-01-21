@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
+    "moduleResolution": "node",
     "strict": true,
     "baseUrl": ".",
     "esModuleInterop": true,
@@ -16,6 +17,7 @@
       "./node_modules/@types"
     ],
     "types": [
+      "node",
       "vite/client"
     ]
   },
