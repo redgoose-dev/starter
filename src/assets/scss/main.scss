@@ -1,8 +1,6 @@
-@use './reset';
+@use './normalize';
 @use './base';
 
-div {
-  strong {
-    display: block;
-  }
+body {
+  padding: 30px;
 }
