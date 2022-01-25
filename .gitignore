@@ -2,9 +2,9 @@
 /.idea
 /node_modules
 /dist
-/dist-ssr
 
 # files
 .DS_Store
 yarn.lock
+package-lock.json
 *.local

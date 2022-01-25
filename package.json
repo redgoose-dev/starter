@@ -6,11 +6,13 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-    "dev": "node server.js",
+    "dev": "nodemon server/entry.js --development",
     "prebuild": "rm -rf ./dist",
-    "build:client": "vite build --outDir dist/client --ssrManifest",
-    "build:server": "vite build --outDir dist/server --ssr src/entry-server.js",
-    "start": "vite preview"
+    "build": "vite build",
+    "start": "node server/entry.js --production"
+  },
+  "nodemonConfig": {
+    "delay": 500
   },
   "browserslist": [
     "> 1%",
@@ -20,6 +22,7 @@
     "express": "^4.17.2"
   },
   "devDependencies": {
+    "nodemon": "^2.0.15",
     "sass": "^1.43.2",
     "vite": "^2.6.4"
   }

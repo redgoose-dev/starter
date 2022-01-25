@@ -5,6 +5,7 @@ import { defineConfig, loadEnv } from 'vite';
 const config = defineConfig(async ({ mode }) => {
   const env = loadEnv(mode, process.cwd());
   return {
+    base: './',
     server: {
       // https://vitejs.dev/config/#server-options
       host: env.VITE_HOST,
@@ -13,6 +14,7 @@ const config = defineConfig(async ({ mode }) => {
     },
     build: {
       // https://vitejs.dev/config/#build-options
+      outDir: env.VITE_OUT_DIR,
     },
     preview: {
       // https://vitejs.dev/config/#preview-options
@@ -22,7 +24,9 @@ const config = defineConfig(async ({ mode }) => {
     define: {
       'TITLE': JSON.stringify(env.VITE_TITLE),
     },
-    plugins: [],
+    plugins: [
+      // https://vitejs.dev/guide/api-plugin.html
+    ],
   };
 });
 
