@@ -3,7 +3,7 @@
 - Vite
 - SCSS
 - DotENV
-- typescript
+- express
 
 
 ## setup
