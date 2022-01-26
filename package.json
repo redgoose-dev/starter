@@ -6,7 +6,8 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon server/entry.js --development",
+    "dev": "node server/entry.js --development",
+    "dev:live": "nodemon server/entry.js --development",
     "prebuild": "rm -rf ./dist",
     "build": "vite build",
     "start": "node server/entry.js --production"
@@ -24,6 +25,6 @@
   "devDependencies": {
     "nodemon": "^2.0.15",
     "sass": "^1.43.2",
-    "vite": "^2.6.4"
+    "vite": "^2.7.13"
   }
 }

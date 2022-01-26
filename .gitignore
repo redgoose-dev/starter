@@ -1,10 +1,12 @@
 # directories
-/.idea
-/node_modules
-/dist
+.idea/
+node_modules/
+dist/
 
 # files
 .DS_Store
 yarn.lock
 package-lock.json
-*.local
+.env.local
+cmd.sh
+0

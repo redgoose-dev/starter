@@ -16,11 +16,6 @@ const config = defineConfig(async ({ mode }) => {
       // https://vitejs.dev/config/#build-options
       outDir: env.VITE_OUT_DIR,
     },
-    preview: {
-      // https://vitejs.dev/config/#preview-options
-      host: env.VITE_HOST,
-      port: Number(env.VITE_PORT),
-    },
     define: {
       'TITLE': JSON.stringify(env.VITE_TITLE),
     },
