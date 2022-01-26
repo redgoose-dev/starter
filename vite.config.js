@@ -5,7 +5,6 @@ import { defineConfig, loadEnv } from 'vite';
 const config = defineConfig(async ({ mode }) => {
   const env = loadEnv(mode, process.cwd());
   return {
-    base: './',
     server: {
       // https://vitejs.dev/config/#server-options
       host: env.VITE_HOST,
