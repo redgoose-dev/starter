@@ -1,30 +1,35 @@
 {
-  "name": "starter-vite-node",
-  "version": "0.0.0",
-  "repository": "https://github.com/redgoose-dev/starter.git",
+  "name": "api-tester",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/redgoose-dev/api-tester.git",
   "author": "redgoose <scripter@me.com>",
-  "type": "module",
   "license": "MIT",
+  "type": "module",
   "scripts": {
-    "dev": "node server/entry.js --development",
-    "dev:live": "nodemon server/entry.js --development",
+    "dev": "vite",
     "prebuild": "rm -rf ./dist",
     "build": "vite build",
-    "start": "node server/entry.js --production"
+    "start": "vite preview"
   },
-  "nodemonConfig": {
-    "delay": 500
+  "engines": {
+    "node": ">=17"
   },
   "browserslist": [
     "> 1%",
     "last 2 versions"
   ],
-  "dependencies": {
-    "express": "^4.17.2"
-  },
   "devDependencies": {
-    "nodemon": "^2.0.15",
-    "sass": "^1.43.2",
-    "vite": "^2.7.13"
+    "@types/node": "^18.0.0",
+    "@types/react": "^18.0.14",
+    "@types/react-dom": "^18.0.5",
+    "@vitejs/plugin-react": "^1.3.2",
+    "ohmyfetch": "^0.4.18",
+    "typescript": "^4.7.4",
+    "vite": "^2.9.12"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
