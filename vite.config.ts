@@ -1,11 +1,10 @@
 import { defineConfig, loadEnv } from 'vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
 import sveltePreprocess from 'svelte-preprocess';
-import autoprefixer from 'autoprefixer';
 
 // docs: https://vitejs.dev/config
 
-export default defineConfig(({ mode }) => {
+export default defineConfig(({ mode }): any => {
   const env = loadEnv(mode, process.cwd());
   return {
     server: {
@@ -17,10 +16,7 @@ export default defineConfig(({ mode }) => {
         // '/api': {},
       },
     },
-    define: {
-      'TITLE': JSON.stringify(env.VITE_TITLE),
-      'DEBUG': JSON.stringify(env.VITE_DEBUG === 'true'),
-    },
+    define: {},
     build: {
       rollupOptions: {},
     },
@@ -33,12 +29,5 @@ export default defineConfig(({ mode }) => {
         preprocess: sveltePreprocess(),
       }),
     ],
-    css: {
-      postcss: {
-        plugins: [
-          autoprefixer(),
-        ],
-      },
-    },
   };
 });

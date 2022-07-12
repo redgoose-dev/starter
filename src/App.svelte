@@ -4,14 +4,14 @@
   <HelloWorld/>
 </article>
 
-<script>
+<script lang="ts">
 import HelloWorld from './components/hello-world/index.svelte';
-console.warn('DEBUG:', window.DEBUG)
 </script>
 
 <style lang="scss">
 .app {
   h1 {
+    margin: 0;
     background: #999;
     padding: 16px;
     color: #fff;

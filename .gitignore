@@ -9,5 +9,6 @@ dist/
 .env.production
 yarn.lock
 package-lock.json
+bun.lockb
 cmd.sh
 0

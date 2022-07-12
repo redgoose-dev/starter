@@ -8,7 +8,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "start": "vite preview"
+    "start": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "browserslist": [
     "> 1%",
@@ -16,11 +17,15 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.34",
-    "autoprefixer": "^10.4.2",
-    "sass": "^1.48.0",
-    "svelte": "^3.46.2",
-    "svelte-preprocess": "^4.10.2",
-    "vite": "^2.7.12"
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.49",
+    "@tsconfig/svelte": "^3.0.0",
+    "autoprefixer": "^10.4.7",
+    "sass": "^1.53.0",
+    "svelte": "^3.49.0",
+    "svelte-check": "^2.8.0",
+    "svelte-preprocess": "^4.10.7",
+    "tslib": "^2.4.0",
+    "typescript": "^4.7.4",
+    "vite": "^2.9.14"
   }
 }
