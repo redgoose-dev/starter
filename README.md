@@ -2,6 +2,7 @@
 
 - Vite
 - SCSS
+- Typescript
 - DotENV
 - express
 

@@ -1,4 +1,8 @@
-const args = process.argv.slice(2);
+import * as path from 'path'
+import { loadEnv } from 'vite'
+
+const __dirname = path.resolve()
+const args = process.argv.slice(2)
 
 /**
  * is development
@@ -7,8 +11,8 @@ const args = process.argv.slice(2);
  */
 export function isDev()
 {
-  const idx = args.indexOf('--development');
-  return (idx > -1);
+  const idx = args.indexOf('--development')
+  return (idx > -1)
 }
 
 /**
@@ -27,10 +31,20 @@ export function openServerMessage(host, port, dev)
     line: Array(40).fill('=').join(''),
     development: 'Development',
     production: 'Production',
-  };
-  const colorText = (message, color) => (`${assets[color]}${message}${assets.reset}`);
-  console.log(assets.line);
-  console.log(`| ${colorText(dev ? assets.development : assets.production, 'yellow')} server running at:`);
-  console.log(`| >> Local: ${colorText(`http://localhost:${port}`, 'cyan')}`);
-  console.log(assets.line);
+  }
+  const colorText = (message, color) => (`${assets[color]}${message}${assets.reset}`)
+  console.log(assets.line)
+  console.log(`| ${colorText(dev ? assets.development : assets.production, 'yellow')} server running at:`)
+  console.log(`| >> Local: ${colorText(`http://localhost:${port}`, 'cyan')}`)
+  console.log(assets.line)
+}
+
+/**
+ * get env
+ *
+ * @return {object}
+ */
+export function getEnv()
+{
+  return loadEnv(isDev() ? 'development' : 'production', __dirname)
 }
