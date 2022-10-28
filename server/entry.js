@@ -66,22 +66,18 @@ function production(app)
   const outDir = env.VITE_OUT_DIR || 'dist'
   // extend routes
   serviceServer(app)
+  // TODO: 검색엔진에서 따로 렌더링 한다면 사용한다.
+  // load static files
+  app.use(express.static(outDir, {
+    index: false,
+    extensions: [ 'html' ],
+  }))
   // global route
   app.use((req, res, next) => {
-    // TODO: 검색엔진에서 따로 렌더링 한다면 사용한다.
     // render search engine bot
     if (isbot(req.get('user-agent')))
     {
       searchEngine(app)
-      next()
-      return
-    }
-    // load static files
-    if (req.path.indexOf('.') > -1)
-    {
-      app.use(express.static(outDir, {
-        // https://expressjs.com/en/5x/api.html#express.static
-      }))
       next()
       return
     }
