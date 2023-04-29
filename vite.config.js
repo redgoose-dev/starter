@@ -1,10 +1,10 @@
-import path from 'path';
-import { defineConfig, loadEnv } from 'vite';
+import path from 'path'
+import { defineConfig, loadEnv } from 'vite'
 
 // docs: https://vitejs.dev/config
 
 export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, process.cwd());
+  const env = loadEnv(mode, process.cwd())
   return {
     resolve: {
       alias: [
@@ -15,19 +15,16 @@ export default defineConfig(({ mode }) => {
       ],
     },
     server: {
-      host: env.VITE_HOST,
-      port: env.VITE_PORT,
+      host: env.VITE_HOST || '0.0.0.0',
+      port: Number(env.VITE_PORT) || 3000,
       open: env.VITE_OPEN_BROWSER === 'true',
       proxy: {
         // https://vitejs.dev/config/#server-proxy
         // '/api': {},
       },
     },
-    define: {
-      'TITLE': JSON.stringify(env.VITE_TITLE),
-    },
     plugins: [
       //
     ],
-  };
-});
+  }
+})

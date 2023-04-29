@@ -14,8 +14,11 @@
     "> 1%",
     "last 2 versions"
   ],
+  "engines": {
+    "node": "20"
+  },
   "devDependencies": {
-    "sass": "^1.43.2",
-    "vite": "^2.6.4"
+    "sass": "^1.62.1",
+    "vite": "^4.3.3"
   }
 }
